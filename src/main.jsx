@@ -4,7 +4,10 @@ import App from "./App.jsx";
 import CssBaseline from "@mui/material/CssBaseline";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 // Fonts
+// Supports weights 100-900
 import "@fontsource-variable/montserrat";
+// Supports weights 400-900
+import "@fontsource-variable/playfair-display";
 //
 
 const theme = createTheme({
@@ -14,10 +17,10 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: "#606c38",
+      main: "#283618",
     },
     secondary: {
-      main: "#dda15e",
+      main: "#606c38",
     },
   },
   components: {
