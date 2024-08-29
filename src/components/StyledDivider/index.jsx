@@ -1,13 +1,13 @@
 import { Typography, Divider } from "@mui/material";
+import styles from "./styles";
 
-const StyledDivider = () => {
+const StyledDivider = (props) => {
   return (
     <Divider
-      sx={{
-        maxWidth: "900px",
-        margin: "auto",
-        borderColor: "primary.main",
-      }}
+      {...props}
+      sx={
+        props.sx ? { ...styles.dividerStyle, ...props.sx } : styles.dividerStyle
+      }
     >
       <Typography color="primary">•</Typography>
     </Divider>

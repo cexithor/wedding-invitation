@@ -3,7 +3,14 @@ import styles from "./styles";
 
 const SolidContainer = (props) => {
   return (
-    <Container sx={styles.solidContainer} {...props}>
+    <Container
+      {...props}
+      sx={
+        props.sx
+          ? { ...styles.solidContainer, ...props.sx }
+          : styles.solidContainer
+      }
+    >
       {props.children}
     </Container>
   );
