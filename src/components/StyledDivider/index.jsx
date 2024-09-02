@@ -9,7 +9,7 @@ const StyledDivider = (props) => {
         props.sx ? { ...styles.dividerStyle, ...props.sx } : styles.dividerStyle
       }
     >
-      <Typography color="primary">•</Typography>
+      <Typography color={props.color ? props.color : "primary"}>•</Typography>
     </Divider>
   );
 };

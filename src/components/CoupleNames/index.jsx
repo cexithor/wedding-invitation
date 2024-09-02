@@ -1,6 +1,6 @@
 import styles from "./styles";
 
-const CoupleNames = ({ color = "#fff" }) => {
+const CoupleNames = ({ color = "#fefae0" }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
