@@ -19,7 +19,7 @@ const styles = {
   },
 
   caption: {
-    color: "white",
+    color: "secondary.main",
     fontSize: "12px",
     fontStyle: "italic",
     mb: { xs: "16px" },
@@ -34,7 +34,7 @@ const styles = {
   btn: {
     width: "70px",
     height: "70px",
-    color: "white",
+    color: "secondary.main",
     position: "relative",
     top: "calc(50% - 35px)",
     left: "calc(50% - 35px)",

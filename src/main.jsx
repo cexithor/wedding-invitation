@@ -20,7 +20,7 @@ const theme = createTheme({
       main: "#283618",
     },
     secondary: {
-      main: "#606c38",
+      main: "#fefae0",
     },
   },
   components: {
@@ -28,7 +28,6 @@ const theme = createTheme({
       style: {
         borderRadius: "0px",
         textTransform: "none",
-        fontWeight: 300,
       },
     },
   },

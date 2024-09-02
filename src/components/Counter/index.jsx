@@ -5,10 +5,10 @@ import convertMilliseconds from "../../utils/convertMilliseconds";
 const CounterField = ({ number, caption }) => {
   return (
     <Box display="flex" flexDirection="column" alignItems="center">
-      <Typography color="white" fontSize="32px">
+      <Typography color="secondary.main" fontSize="32px">
         {number}
       </Typography>
-      <Typography color="white" fontSize="20px">
+      <Typography color="secondary.main" fontSize="20px">
         {caption}
       </Typography>
     </Box>
@@ -21,7 +21,7 @@ const CounterDivider = () => {
       orientation="vertical"
       flexItem
       variant="middle"
-      sx={{ borderColor: "white" }}
+      sx={{ borderColor: "secondary.main" }}
     />
   );
 };
