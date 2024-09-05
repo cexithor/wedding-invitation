@@ -34,14 +34,14 @@ const App = () => {
   const [openAttendance, setOpenAttendance] = useState(false);
 
   return (
-    <Box bgcolor="#fefae0">
+    <Box bgcolor="#CFDBC3">
       <Envelope />
       <Attendance
         openAttendance={openAttendance}
         setOpenAttendance={setOpenAttendance}
       />
 
-      <ImageDisplay img="https://picsum.photos/1920/1080" />
+      <ImageDisplay img="images/couple-picture-0.jpg" />
       <Container maxWidth="md">
         <Typography color="primary.main" textAlign="center" sx={{ pt: "12px" }}>
           Save the Date
@@ -50,7 +50,7 @@ const App = () => {
         </Typography>
         <StyledDivider />
         <Box my={{ xs: "24px" }} maxWidth="600px" m="auto">
-          <CoupleNames color="#283618" />
+          <CoupleNames color="#808A6F" />
         </Box>
         <StyledDivider />
         <Typography color="primary.main" sx={{ mt: "16px" }} textAlign="center">
@@ -89,7 +89,7 @@ const App = () => {
         </Typography>
       </Container>
 
-      <ImageDisplay img="https://picsum.photos/1920/1080" />
+      <ImageDisplay img="images/couple-picture-1.jpg" />
       <SolidContainer maxWidth="sm" sx={{ py: "32px", mb: "32px" }}>
         <Subtitle text="Tips y Notas" sx={{ color: "secondary.main" }} />
         <StyledDivider

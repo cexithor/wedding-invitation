@@ -1,6 +1,6 @@
 const styles = {
   imgContainer: {
-    height: "420px",
+    height: { xs: "420px", lg: "620px" },
     backgroundSize: "cover",
     backgroundPosition: "center",
   },
