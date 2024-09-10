@@ -3,7 +3,7 @@ import styles from "./styles";
 import { Box, Typography, Dialog, Button } from "@mui/material";
 import CoupleNames from "../CoupleNames";
 
-const Envelope = () => {
+const Envelope = ({ playAudio }) => {
   const [open, setOpen] = useState(true);
 
   return (
@@ -13,7 +13,13 @@ const Envelope = () => {
         <br /> una cordial invitación.
       </Typography>
       <Box sx={styles.envelope}>
-        <Button sx={styles.btn} onClick={() => setOpen(false)}>
+        <Button
+          sx={styles.btn}
+          onClick={() => {
+            setOpen(false);
+            playAudio();
+          }}
+        >
           Abrir
         </Button>
       </Box>
