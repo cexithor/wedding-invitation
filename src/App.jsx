@@ -1,4 +1,5 @@
 import { useState } from "react";
+import useSound from "use-sound";
 import {
   Box,
   Container,
@@ -15,6 +16,7 @@ import Envelope from "./components/Envelope";
 import ImageDisplay from "./components/ImageDisplay";
 import StyledDivider from "./components/StyledDivider";
 import CoupleNames from "./components/CoupleNames";
+import SeeYouSoon from "./components/SeeYouSoon";
 import SolidContainer from "./components/SolidContainer";
 import Subtitle from "./components/Subtitle";
 import Counter from "./components/Counter";
@@ -29,13 +31,18 @@ import VillaIcon from "@mui/icons-material/Villa";
 import HotelIcon from "@mui/icons-material/Hotel";
 import CheckroomIcon from "@mui/icons-material/Checkroom";
 import CardGiftcardIcon from "@mui/icons-material/CardGiftcard";
+import LibraryMusicIcon from "@mui/icons-material/LibraryMusic";
+//Audio
+import bgMusic from "/sounds/bg-music.mp3";
 
 const App = () => {
   const [openAttendance, setOpenAttendance] = useState(false);
+  const [play] = useSound(bgMusic);
 
   return (
     <Box bgcolor="#CFDBC3">
-      <Envelope />
+      <audio id="audio-tag" src="sounds/bg-music.mp3" loop autoPlay />
+      <Envelope playAudio={() => play()} />
       <Attendance
         openAttendance={openAttendance}
         setOpenAttendance={setOpenAttendance}
@@ -206,19 +213,6 @@ const App = () => {
           Estamos deseando compartir este viaje tan especial con ustedes. Solo
           falta que elijas tu asiento:
         </Typography>
-        <Typography color="primary.main" sx={{ my: "16px" }}>
-          Estamos deseando compartir el inicio de este viaje con ustedes. A las{" "}
-          <strong>17:00 pm</strong>, en el{" "}
-          <strong>
-            Resort Sandos Finisterra, ubicado en Cabo San Lucas, B.C.S.
-          </strong>{" "}
-          será el punto de partida de este viaje.
-        </Typography>
-        <Typography color="primary.main">
-          El sol, la arena y el mar serán los testigos de nuestra felicidad.
-          Esperamos que ustedes también puedan compartir este viaje con
-          nosotros, y nos regales tu presencia en un día tan especial.
-        </Typography>
         <Box
           display="flex"
           flexDirection="column"
@@ -287,7 +281,7 @@ const App = () => {
                   disponibles!&quot;
                 </em>
                 <br />
-                Terracotta
+                Terracota/Verde Olivo
                 <br />
                 Paleta de colores recomendada:
               </>
@@ -305,12 +299,44 @@ const App = () => {
             ))}
           </Box>
           <ListItemWithIcon
+            icon={<LibraryMusicIcon color="secondary" fontSize="large" />}
+            primary="Música/Playlist"
+            secondary={
+              <>
+                ¿Cuál es la canción que no debe faltar en la playlist de la
+                fiesta?
+                <br /> Añadir canción en{" "}
+                <Link
+                  href="https://open.spotify.com/playlist/5AnLx0X9sUwH8r9I2p4zBX?si=qj2U9kpYREeop7mroUDP2A&pi=u-W5RWlk6yR86z"
+                  target="_blank"
+                  variant="body2"
+                  color="#ffffff"
+                >
+                  playlist de Spotify
+                </Link>
+              </>
+            }
+          />
+          <ListItemWithIcon
             icon={<CardGiftcardIcon color="secondary" fontSize="large" />}
             primary="Regalos"
             secondary="Seguramente estarás pensando en qué regalo deberías hacernos. Para nosotros, tu presencia es lo mejor que podemos recibir. Con la gente que nos quiere ya tenemos todo lo que necesitamos, así que si deseas hacernos un regalo, regálanos tu tiempo en un momento tan especial. Tu cariño y sonrisa son todo lo que deseamos."
           />
         </List>
       </SolidContainer>
+      <Container
+        maxWidth="sm"
+        sx={{ display: "flex", flexDirection: "column", mt: "48px" }}
+      >
+        <img
+          src="images/couple-picture-frame.png"
+          alt="couple-picture-frame"
+          width="100%"
+        />
+        <Box width="50%" alignSelf="flex-end" position="relative" top="-48px">
+          <SeeYouSoon />
+        </Box>
+      </Container>
     </Box>
   );
 };

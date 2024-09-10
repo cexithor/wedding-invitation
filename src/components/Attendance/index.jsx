@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Box,
   Button,
   Dialog,
   DialogActions,
@@ -8,16 +7,17 @@ import {
   DialogContentText,
   DialogTitle,
   Slide,
-  Link,
   List,
   ListItem,
   ListItemText,
   ListItemIcon,
+  IconButton,
 } from "@mui/material";
 import StyledDivider from "../StyledDivider";
 //Icons
 import EmailIcon from "@mui/icons-material/Email";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
+import CloseIcon from "@mui/icons-material/Close";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -28,6 +28,7 @@ const Attendance = ({ openAttendance, setOpenAttendance }) => {
     <Dialog
       maxWidth="xs"
       open={openAttendance}
+      onClose={() => setOpenAttendance(false)}
       TransitionComponent={Transition}
       keepMounted
       sx={{ "& .MuiDialog-paper": { backgroundColor: "primary.main" } }}
@@ -35,34 +36,22 @@ const Attendance = ({ openAttendance, setOpenAttendance }) => {
       <DialogTitle sx={{ color: "secondary.main" }} variant="subtitle2">
         Como confirmar tu asistencia:
       </DialogTitle>
+      <IconButton
+        aria-label="close"
+        onClick={() => setOpenAttendance(false)}
+        sx={(theme) => ({
+          position: "absolute",
+          right: 8,
+          top: 8,
+          color: theme.palette.primary.dark,
+        })}
+      >
+        <CloseIcon />
+      </IconButton>
       <DialogContent>
         <DialogContentText sx={{ color: "secondary.main" }} variant="body2">
-          Por favor, ayúdanos a confirmar tu asistencia al siguiente número:
-        </DialogContentText>
-        <DialogContentText
-          sx={{ color: "secondary.main", my: "12px" }}
-          textAlign="center"
-          variant="h6"
-        >
-          55-3399-9244
-        </DialogContentText>
-        <DialogContentText sx={{ color: "secondary.main" }} variant="body2">
-          o al siguiente correo electrónico:
-        </DialogContentText>
-        <DialogContentText
-          variant="caption"
-          textAlign="center"
-          sx={{ mt: "12px" }}
-        >
-          <Link href="mailto:valeria.estephania98@gmail.com" color="secondary">
-            valeria.estephania98@gmail.com
-          </Link>
-        </DialogContentText>
-        <Box display="flex" justifyContent="center" mb="12px">
-          <EmailIcon color="secondary" />
-        </Box>
-        <DialogContentText sx={{ color: "secondary.main" }} variant="body2">
-          antes del <strong>15 Noviembre 2024.</strong>
+          Por favor, ayúdanos a confirmar tu asistencia antes del{" "}
+          <strong>15 Noviembre 2024.</strong>
         </DialogContentText>
         <DialogContentText
           sx={{ color: "secondary.main", my: "12px" }}
@@ -141,10 +130,16 @@ const Attendance = ({ openAttendance, setOpenAttendance }) => {
         <Button
           variant="contained"
           color="secondary"
-          onClick={() => setOpenAttendance(false)}
+          onClick={() => {
+            window.open(
+              "https://wa.me/5533999244?text=Hola%2C%20me%20complace%20confirmar%20mi%20asistencia",
+              "_blank"
+            );
+            setOpenAttendance(false);
+          }}
           fullWidth
         >
-          Aceptar
+          Confirmar <EmailIcon sx={{ ml: "8px" }} color="primary" />
         </Button>
       </DialogActions>
     </Dialog>
