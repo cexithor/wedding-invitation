@@ -7,7 +7,7 @@ const terracottaPalette = [
   '#F8D5C1',
   '#AD6451',
   '#D8A496',
-  '#DADFDB',
+  '#163530',
   '#66837E',
   '#808A6F',
   '#DD9857',

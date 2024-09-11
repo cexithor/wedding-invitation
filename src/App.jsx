@@ -130,7 +130,7 @@ const App = () => {
           <ListItemWithIcon
             icon={<VillaIcon color="secondary" fontSize="large" />}
             primary="¿En dónde puedo hospedarme? "
-            secondary="Te recomendamos hospedarte en el resort donde será el evento,"
+            secondary="Te recomendamos hospedarte en el resort donde será el evento."
           />
           <Box ml={{ xs: 0, sm: "76px" }}>
             <Box
@@ -273,17 +273,16 @@ const App = () => {
             primary="Dress Code"
             secondary={
               <>
-                Etiqueta formal de día.
+                Etiqueta formal.
                 <br />{" "}
                 <em>
                   &quot;El blanco es un color hermoso, pero en nuestra boda, es
-                  exclusivo para la novia. ¡Todos los demás colores están
-                  disponibles!&quot;
+                  exclusivo para la novia.&quot;
                 </em>
                 <br />
-                Terracota/Verde Olivo
-                <br />
                 Paleta de colores recomendada:
+                <br />
+                Terracota / Verde Olivo
               </>
             }
           />
@@ -333,7 +332,12 @@ const App = () => {
           alt="couple-picture-frame"
           width="100%"
         />
-        <Box width="50%" alignSelf="flex-end" position="relative" top="-48px">
+        <Box
+          width="50%"
+          alignSelf="flex-end"
+          position="relative"
+          top={{ xs: "-32px", sm: "-68px" }}
+        >
           <SeeYouSoon />
         </Box>
       </Container>
