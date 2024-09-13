@@ -131,10 +131,7 @@ const Attendance = ({ openAttendance, setOpenAttendance }) => {
           variant="contained"
           color="secondary"
           onClick={() => {
-            window.open(
-              "https://wa.me/5533999244?text=Hola%2C%20me%20complace%20confirmar%20mi%20asistencia",
-              "_blank"
-            );
+            window.open("https://forms.office.com/r/DzrnGL1RW3", "_blank");
             setOpenAttendance(false);
           }}
           fullWidth
