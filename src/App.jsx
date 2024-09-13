@@ -207,31 +207,6 @@ const App = () => {
       </SolidContainer>
 
       <Container maxWidth="md">
-        <Subtitle text="Confirmar la asistencia" />
-        <StyledDivider sx={{ my: "16px" }} />
-        <Typography color="primary.main">
-          Estamos deseando compartir este viaje tan especial con ustedes. Solo
-          falta que elijas tu asiento:
-        </Typography>
-        <Box
-          display="flex"
-          flexDirection="column"
-          alignItems="center"
-          my="24px"
-        >
-          <Button
-            variant="contained"
-            onClick={() =>
-              window.open("https://forms.office.com/r/DzrnGL1RW3", "_blank")
-            }
-          >
-            ¡Por supuesto que me apunto!
-          </Button>
-          <Typography variant="body2" textAlign="center">
-            Ya tengo la maleta lista y el boleto comprado
-          </Typography>
-        </Box>
-        <StyledDivider sx={{ my: "16px" }} />
         <Subtitle text="Retratos de nuestro amor" />
       </Container>
       <ImageList
@@ -250,7 +225,7 @@ const App = () => {
           </ImageListItem>
         ))}
       </ImageList>
-      <SolidContainer maxWidth="sm" sx={{ py: "32px" }}>
+      <SolidContainer maxWidth="sm" sx={{ py: "32px", mb: "32px" }}>
         <Subtitle text="Fiesta" color="secondary.main" />
         <StyledDivider
           sx={{
@@ -328,6 +303,33 @@ const App = () => {
           />
         </List>
       </SolidContainer>
+      <Container maxWidth="md">
+        <Subtitle text="Confirmar la asistencia" />
+        <StyledDivider sx={{ my: "16px" }} />
+        <Typography color="primary.main">
+          Estamos deseando compartir este viaje tan especial con ustedes. Solo
+          falta que elijas tu asiento:
+        </Typography>
+        <Box
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          my="24px"
+        >
+          <Button
+            variant="contained"
+            onClick={() =>
+              window.open("https://forms.office.com/r/DzrnGL1RW3", "_blank")
+            }
+          >
+            ¡Por supuesto que me apunto!
+          </Button>
+          <Typography variant="body2" textAlign="center">
+            Ya tengo la maleta lista y el boleto comprado
+          </Typography>
+        </Box>
+        <StyledDivider sx={{ my: "16px" }} />
+      </Container>
       <Container
         maxWidth="sm"
         sx={{ display: "flex", flexDirection: "column", mt: "48px" }}
