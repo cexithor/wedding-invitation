@@ -219,7 +219,12 @@ const App = () => {
           alignItems="center"
           my="24px"
         >
-          <Button variant="contained" onClick={() => setOpenAttendance(true)}>
+          <Button
+            variant="contained"
+            onClick={() =>
+              window.open("https://forms.office.com/r/DzrnGL1RW3", "_blank")
+            }
+          >
             ¡Por supuesto que me apunto!
           </Button>
           <Typography variant="body2" textAlign="center">
